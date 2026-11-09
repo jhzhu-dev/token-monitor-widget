@@ -8,111 +8,119 @@
   <link rel="stylesheet" href="settings.css">
 </head>
 <body>
-  <h1>设置</h1>
+  <div id="root">
+    <header id="header">
+      <span class="dot"></span>
+      <span class="title">设置</span>
+      <span class="spacer"></span>
+      <button id="btnClose" class="icon-btn" title="关闭">✕</button>
+    </header>
 
-  <section class="card">
-    <h2>通用</h2>
-    <div class="row">
-      <label for="refreshSec">刷新间隔</label>
-      <select id="refreshSec">
-        <option value="30">30 秒</option>
-        <option value="60">60 秒</option>
-        <option value="120">2 分钟</option>
-        <option value="300">5 分钟</option>
-      </select>
-    </div>
-    <div class="row">
-      <label for="threshold">告警阈值（已用 %）</label>
-      <input id="threshold" type="number" min="50" max="95" step="5">
-    </div>
-    <div class="row check">
-      <label><input type="checkbox" id="autostart"> 开机自启（随 Windows 登录启动）</label>
-    </div>
-  </section>
+    <main id="body">
+      <section class="card">
+        <h2>通用</h2>
+        <div class="row">
+          <label for="refreshSec">刷新间隔</label>
+          <select id="refreshSec">
+            <option value="30">30 秒</option>
+            <option value="60">60 秒</option>
+            <option value="120">2 分钟</option>
+            <option value="300">5 分钟</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="threshold">告警阈值（已用 %）</label>
+          <input id="threshold" type="number" min="50" max="95" step="5">
+        </div>
+        <div class="row check">
+          <label><input type="checkbox" id="autostart"> 开机自启（随 Windows 登录启动）</label>
+        </div>
+      </section>
 
-  <section class="card">
-    <h2><input type="checkbox" id="zhipuEnabled"> 智谱 Coding Plan</h2>
-    <div class="row check">
-      <label><input type="radio" name="zpMode" value="login" id="zpModeLogin" checked> 账号登录（推荐，弹窗登录 open.bigmodel.cn，可查全部账号数据）</label>
-    </div>
-    <div class="row check">
-      <label><input type="radio" name="zpMode" value="apikey" id="zpModeKey"> 直接粘贴 API Key</label>
-    </div>
+      <section class="card">
+        <h2><input type="checkbox" id="zhipuEnabled"> 智谱 Coding Plan</h2>
+        <div class="row check">
+          <label><input type="radio" name="zpMode" value="login" id="zpModeLogin" checked> 账号登录（推荐，弹窗登录 bigmodel.cn，可查全部账号数据）</label>
+        </div>
+        <div class="row check">
+          <label><input type="radio" name="zpMode" value="apikey" id="zpModeKey"> 直接粘贴 API Key</label>
+        </div>
 
-    <div id="zpLoginBlock">
-      <div class="row">
-        <button id="zpLoginBtn" class="primary">登录智谱账号（弹窗）</button>
-        <button id="zpLogoutBtn" class="danger" hidden>退出登录</button>
-      </div>
-      <div id="zpAuthStatus" class="status">未检查</div>
-      <p class="hint">会话保存在本机，重启后保持登录；过期后自动提示重新登录。账号登录暂只支持中国大陆站。</p>
-    </div>
+        <div id="zpLoginBlock">
+          <div class="row">
+            <button id="zpLoginBtn" class="primary">登录智谱账号（弹窗）</button>
+            <button id="zpLogoutBtn" class="danger" hidden>退出登录</button>
+          </div>
+          <div id="zpAuthStatus" class="status">未检查</div>
+          <p class="hint">会话保存在本机，重启后保持登录；过期后自动提示重新登录。账号登录暂只支持中国大陆站。</p>
+        </div>
 
-    <div id="zpKeyBlock" hidden>
-      <div class="row">
-        <label for="zhipuKey">API Key</label>
-        <input id="zhipuKey" type="password" placeholder="形如 xxx.yyy">
-        <button class="mini" id="zhipuShow" title="显示/隐藏">👁</button>
-      </div>
-    </div>
+        <div id="zpKeyBlock" hidden>
+          <div class="row">
+            <label for="zhipuKey">API Key</label>
+            <input id="zhipuKey" type="password" placeholder="形如 xxx.yyy">
+            <button class="mini" id="zhipuShow" title="显示/隐藏">👁</button>
+          </div>
+        </div>
 
-    <div class="row">
-      <label for="zhipuRegion">站点</label>
-      <select id="zhipuRegion">
-        <option value="cn">中国大陆 open.bigmodel.cn</option>
-        <option value="global">国际版 api.z.ai（仅 API Key）</option>
-      </select>
-    </div>
-  </section>
+        <div class="row">
+          <label for="zhipuRegion">站点</label>
+          <select id="zhipuRegion">
+            <option value="cn">中国大陆 open.bigmodel.cn</option>
+            <option value="global">国际版 api.z.ai（仅 API Key）</option>
+          </select>
+        </div>
+      </section>
 
-  <section class="card">
-    <h2><input type="checkbox" id="ocEnabled"> OpenCode Go</h2>
-    <div class="row check">
-      <label><input type="radio" name="ocMode" value="oauth" id="ocModeOauth"> OAuth 登录（推荐，token 自动刷新）</label>
-    </div>
-    <div class="row check">
-      <label><input type="radio" name="ocMode" value="apikey" id="ocModeKey"> 直接粘贴 API Key</label>
-    </div>
+      <section class="card">
+        <h2><input type="checkbox" id="ocEnabled"> OpenCode Go</h2>
+        <div class="row check">
+          <label><input type="radio" name="ocMode" value="oauth" id="ocModeOauth"> OAuth 登录（推荐，token 自动刷新）</label>
+        </div>
+        <div class="row check">
+          <label><input type="radio" name="ocMode" value="apikey" id="ocModeKey"> 直接粘贴 API Key</label>
+        </div>
 
-    <div id="oauthBlock">
-      <div class="row">
-        <button id="ocLoginBtn" class="primary">登录 OpenCode（浏览器授权）</button>
-        <button id="ocLogoutBtn" class="danger" hidden>退出登录</button>
-      </div>
-      <div id="ocAuthStatus" class="status">未检查</div>
-      <ol class="hint steps">
-        <li>点击「登录」会打开浏览器进入 opencode.ai 授权页</li>
-        <li>输入页面上的设备码并确认</li>
-        <li>本窗口自动完成登录，token 过期前自动续期</li>
-      </ol>
-    </div>
+        <div id="oauthBlock">
+          <div class="row">
+            <button id="ocLoginBtn" class="primary">登录 OpenCode（浏览器授权）</button>
+            <button id="ocLogoutBtn" class="danger" hidden>退出登录</button>
+          </div>
+          <div id="ocAuthStatus" class="status">未检查</div>
+          <ol class="hint steps">
+            <li>点击「登录」会打开浏览器进入 opencode.ai 授权页</li>
+            <li>输入页面上的设备码并确认</li>
+            <li>本窗口自动完成登录，token 过期前自动续期</li>
+          </ol>
+        </div>
 
-    <div id="keyBlock" hidden>
-      <div class="row">
-        <label for="ocKey">API Key</label>
-        <input id="ocKey" type="password" placeholder="opencode console 创建">
-        <button class="mini" id="ocShow" title="显示/隐藏">👁</button>
-      </div>
-      <p class="hint">Console → Personal API keys → Add API key。额度为账号级（全部 Key 共享）。</p>
-    </div>
-  </section>
+        <div id="keyBlock" hidden>
+          <div class="row">
+            <label for="ocKey">API Key</label>
+            <input id="ocKey" type="password" placeholder="opencode console 创建">
+            <button class="mini" id="ocShow" title="显示/隐藏">👁</button>
+          </div>
+          <p class="hint">Console → Personal API keys → Add API key。额度为账号级（全部 Key 共享）。</p>
+        </div>
+      </section>
 
-  <section class="card">
-    <h2><input type="checkbox" id="dsEnabled"> DeepSeek</h2>
-    <p class="hint">按量付费账户余额（无订阅套餐）。platform.deepseek.com 创建 Key。</p>
-    <div class="row">
-      <label for="dsKey">API Key</label>
-      <input id="dsKey" type="password" placeholder="sk-...">
-      <button class="mini" id="dsShow" title="显示/隐藏">👁</button>
-    </div>
-  </section>
+      <section class="card">
+        <h2><input type="checkbox" id="dsEnabled"> DeepSeek</h2>
+        <p class="hint">按量付费账户余额（无订阅套餐）。platform.deepseek.com 创建 Key。</p>
+        <div class="row">
+          <label for="dsKey">API Key</label>
+          <input id="dsKey" type="password" placeholder="sk-...">
+          <button class="mini" id="dsShow" title="显示/隐藏">👁</button>
+        </div>
+      </section>
 
-  <footer class="actions">
-    <span id="saveTip" class="hint"></span>
-    <span class="spacer"></span>
-    <button id="btnSave" class="primary">保存并刷新</button>
-  </footer>
-
+      <footer class="actions">
+        <span id="saveTip" class="hint"></span>
+        <span class="spacer"></span>
+        <button id="btnSave" class="primary">保存并刷新</button>
+      </footer>
+    </main>
+  </div>
   <script src="settings.js"></script>
 </body>
 </html>

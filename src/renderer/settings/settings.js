@@ -197,6 +197,8 @@ function bind() {
   bindToggle('dsShow', 'dsKey');
 
   $('btnSave').addEventListener('click', save);
+  $('btnClose').addEventListener('click', () => window.close());
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') window.close(); });
   $('ocLoginBtn').addEventListener('click', () => {
     // OAuth 模式无需先保存即可登录
     renderAuthState('busy');

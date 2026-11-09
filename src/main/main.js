@@ -253,10 +253,13 @@ function getSettingsWin() {
   if (settingsWin && !settingsWin.isDestroyed()) return settingsWin;
   settingsWin = new BrowserWindow({
     width: 460,
-    height: 720,
+    height: 660,
     title: 'Token 监控 · 设置',
+    frame: false,
+    transparent: true,
+    hasShadow: false,
+    backgroundColor: '#00000000',
     resizable: false,
-    autoHideMenuBar: true,
     show: false,
     icon: nativeImage.createFromBuffer(iconBuf(icons.app64)),
     webPreferences: {
