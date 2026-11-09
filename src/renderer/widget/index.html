@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'">
+  <title>Token 监控</title>
+  <link rel="stylesheet" href="widget.css">
+</head>
+<body>
+  <div id="root" class="expanded">
+    <header id="header">
+      <span class="dot" id="liveDot"></span>
+      <span class="title">Token 监控</span>
+      <span class="mini" id="miniText"></span>
+      <span class="spacer"></span>
+      <button id="btnRefresh" class="icon-btn" title="立即刷新">⟳</button>
+      <button id="btnSettings" class="icon-btn" title="设置">⚙</button>
+      <button id="btnCollapse" class="icon-btn" title="折叠">▾</button>
+    </header>
+
+    <main id="list"></main>
+
+    <footer id="foot">
+      <span id="updatedAt">加载中…</span>
+      <span class="spacer"></span>
+      <span id="nextIn"></span>
+    </footer>
+  </div>
+  <script src="widget.js"></script>
+</body>
+</html>

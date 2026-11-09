@@ -1,0 +1,17 @@
+{
+  "name": "token-monitor-widget",
+  "version": "1.0.0",
+  "description": "Windows 桌面悬浮小窗：智谱 Coding Plan / OpenCode Go / DeepSeek 余量监控",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "screenshot": "electron . --screenshot --screenshot-settings",
+    "test": "node scripts/test-providers.js",
+    "test:live": "node scripts/test-live.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.2.3"
+  }
+}
