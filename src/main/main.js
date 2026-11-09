@@ -24,7 +24,7 @@ const icons = require('./icons');
 
 const APP_ID = 'com.zai.token-monitor-widget';
 const WIDGET_W = 300;
-const WIDGET_H = 400;
+const WIDGET_H = 430;
 const WIDGET_H_COLLAPSED = 46;
 
 const shotMode = process.argv.includes('--screenshot');
